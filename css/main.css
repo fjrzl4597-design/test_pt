@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Playwrite+DE+SAS:wght@100..400&display=swap");
+
 * {
     margin: 0;
     padding: 0;
@@ -13,16 +14,16 @@ a {
     text-decoration: none;
 }
 .member1 {
+    background-color: #ebfaff;
+}
+.member2{
     background-color: #edffeb;
 }
-.member2 {
-    background-color: #e4feff;
+.member3{
+    background-color: #feebff;
 }
-.member3 {
-    background-color: #fde4f5;
-}
-.member4 {
-    background-color: #f7e7ff;
+.member4{
+    background-color: #f7ebff;
 }
 /* 전체 레이아웃 */
 section {
@@ -59,6 +60,12 @@ section {
 .profile-img img {
     width: 100%;
     display: block;
+    transition: all 0.3s;
+}
+.profile-img:hover img{
+transform: scale(1.1);
+filter: blur(2px);
+cursor: pointer;
 }
 /* 이름 */
 .profile-name h1 {
@@ -79,27 +86,28 @@ section {
     box-shadow: 5px 5px 20px rgba(0, 255, 255, 0.5);
     /* box-shadow: rgba(32, 33, 36, 0.28) 0px 1px 6px 0px; */
 }
+/* member2 더보기 */
+.member2 .btn-view{
+     background: linear-gradient(45deg, #89ee91, #51f85f);
+    box-shadow: 5px 5px 20px rgba(0, 255, 255, 0.5);
+}
+/* member3 더보기 */
+.member3 .btn-view{
+     background: linear-gradient(45deg, #eb89ee, #da51f8);
+    box-shadow: 5px 5px 20px rgba(195, 0, 255, 0.5);
+}
+/* member4 더보기 */
+.member4 .btn-view{
+     background: linear-gradient(45deg, #cc89ee, #aa51f8);
+    box-shadow: 5px 5px 20px rgba(140, 0, 255, 0.5);
+}
+
 /* 연락처 영역 */
 .link-contact {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 30px;
-}
-/* 멤버2 더보기 */
-.member2 .btn-veiw {
-    background: linear-gradient(45deg, #89ee91, #4bd647);
-    box-shadow: 5px 5px 20px rgba(0, 255, 255, 0.5);
-}
-/* 멤버3 더보기 */
-.member3 .btn-veiw {
-    background: linear-gradient(45deg, #ee89e0, #d647b2);
-    box-shadow: 5px 5px 20px rgba(247, 0, 255, 0.5);
-}
-/* 멤버4 더보기 */
-.member4 .btn-veiw {
-    background: linear-gradient(45deg, #ce89ee, #c547d6);
-    box-shadow: 5px 5px 20px rgba(212, 0, 255, 0.5);
 }
 .contact {
     /* background-color: red; */
