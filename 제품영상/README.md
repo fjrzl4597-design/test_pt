@@ -8,7 +8,7 @@
 | 단계 | 할 일 | 크레딧 |
 |---|---|---|
 | ① 자료 모으기 | 상세페이지 캡처, 실제 사진 5~10장을 `번호_제품명/참고사진/`에 넣기 | 0 |
-| ② 제품 카드 | 사진을 Claude에게 주고 "이 제품 카드 만들어줘": 고정 문장과 체크리스트 받기 | 0 |
+| ② 제품 카드 | 사진을 Claude에게 주고 "이 제품 카드 만들어줘": 제품 고정 문장, 배경 문장, 체크리스트 받기 | 0 |
 | ③ 컷 구성 | 아래 컷 템플릿에 제품을 끼워 넣고, 컷마다 **실제 사진** 또는 **AI** 정하기 | 0 |
 | ④ 이미지 생성 | AI 컷만. 체크리스트로 바로 통과/탈락 판정 | 0 |
 | ⑤ 영상 생성 | 통과한 AI 컷만. **저가 모델 x1 테스트 → 고품질 최종** | 사용 |
@@ -33,11 +33,25 @@
 | 6 | 전체 구조 한눈에 | 실제 사진 |
 | 7 | 정리된 결과 / 마무리 | 실제 사진 또는 AI |
 
-## 배경 고정 문장 (모든 제품 공통)
+## 배경 문장 (제품마다 새로 정하고, 그 제품 안에서는 고정)
 
+배경은 제품마다 달라요. 대신 **한 제품의 모든 컷은 같은 배경 문장**을 써야 컷끼리 어색하지 않아요.
+배경 문장은 ② 제품 카드를 만들 때 제품 고정 문장과 함께 정해요.
+
+정하는 기준:
+- 그 제품을 **실제로 쓰는 곳**: 화장대, 주방 조리대, 욕실 선반, 현관, 책상, 차 안 등
+- 판매처 사진이 있으면 그 분위기에 맞추기 (실제 사진 컷과 AI 컷이 섞여도 자연스러워요)
+- 배경 소품은 2~3개만. 많을수록 AI가 컷마다 다르게 그려요
+
+배경 문장 형식 (영어, 한 문단):
 ```
-SCENE (keep identical): white desk by a window with sheer white curtains and soft diffused daylight, a white lace doily under the product, a walnut ring-shaped bud vase with small white flowers and a stack of white coffee-table books in the background. Hands are a woman's with natural short nails, cream knit sweater sleeve. Photorealistic, looks like a real iPhone photo, no text, no logo, 9:16 vertical.
+SCENE (keep identical): [장소와 바닥/상판 재질], [조명: 창가 자연광/주방 조명 등], [소품 2~3개], [손: 손톱, 소매 색·재질]. Photorealistic, looks like a real iPhone photo, no text, no logo, 9:16 vertical.
 ```
+
+예시:
+- 보석함: 창가 흰 책상, 흰 레이스 매트, 원목 꽃병과 책, 크림색 니트 소매 → `01_원목보석함/작업.md`
+- 주방 수납용품: 밝은 대리석 조리대, 오전 창가 빛, 도마와 작은 화분, 회색 맨투맨 소매
+- 욕실 정리함: 흰 타일 벽과 세면대, 밝은 욕실 조명, 수건과 디퓨저, 맨손
 
 ## 프롬프트 틀
 
